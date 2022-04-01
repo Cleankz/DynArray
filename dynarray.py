@@ -34,7 +34,10 @@ class DynArray:
         self.count += 1
 
     def insert(self, i, itm):
-        if i < 0 or i > self.count:
+        if self.count == 0:
+            self.append(itm)
+            self.count += 1
+        elif i < 0 or i > self.count:
             raise IndexError('Index is out of bounds')
         for j in range(self.count):
             if j == i and i < self.count and self.count + 1 < self.capacity:
@@ -63,16 +66,12 @@ class DynArray:
     def delete(self, i):
         if i < 0 or i >= self.count:
             raise IndexError('Index is out of bounds')
+        
         for j in range(self.count):
             if j == i:
                 self.array[j] = None
 da = DynArray()
-for i in range(16):
-    da.append(i)
 da.insert(5,456)
-for i in range(17):
+for i in range(1):
     print (da[i])
 print("_________________________________")
-da.delete(5)
-for i in range(17):
-    print (da[i])
