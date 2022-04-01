@@ -70,8 +70,3 @@ class DynArray:
         for j in range(self.count):
             if j == i:
                 self.array[j] = None
-da = DynArray()
-da.insert(5,456)
-for i in range(1):
-    print (da[i])
-print("_________________________________")
