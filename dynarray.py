@@ -66,7 +66,11 @@ class DynArray:
     def delete(self, i):
         if i < 0 or i >= self.count:
             raise IndexError('Index is out of bounds')
-        
         for j in range(self.count):
             if j == i:
                 self.array[j] = None
+
+
+da = DynArray()
+da.insert(18,123)
+print(da[0])
