@@ -19,7 +19,7 @@ class MyTests(unittest.TestCase):
         da = DynArray()
         for i in range(random.randint(0,500)):
             da.append(i)
-        for j in range(random.randint(0,500)):
+        for j in range(random.randint(0,100)):
             da.delete(i)
 
     
