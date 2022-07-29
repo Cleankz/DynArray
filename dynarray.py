@@ -38,10 +38,10 @@ class DynArray:
     def insert_elem(self, i, itm):#insert - insert_elem
         if i < 0 or i > self.count:
             raise IndexError('Index is out of bounds')
-        num = self.count
-        if num == 0 and i == 0:
-            num += 1
-        for j in range(num):
+        LEN_ARRAY = self.count # num - LEN_ARRAY
+        if LEN_ARRAY == 0 and i == 0:
+            LEN_ARRAY += 1
+        for j in range(LEN_ARRAY):
             if j == i and i < self.count and self.count + 1 <= self.capacity:
                 for x in range(self.count-1,i-1,-1):
                     self.array[x+1] = self.array[x]
